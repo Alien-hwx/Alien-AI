@@ -40,6 +40,8 @@ export default function RootLayout({
           href="https://fonts.proxy.ustclug.org/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap"
           rel="stylesheet"
         ></link>
+        <link rel="icon" href="/favicon.ico" />
+        <title>Alien-AI</title>
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
       <body>{children}</body>
