@@ -194,7 +194,7 @@ export function SideBar(props: { className?: string }) {
             </div>
             {showPopup && (
              <div className="popup-window">
-               <img src="https://example.com/image.jpg" />
+               <img src="../public/QRcode.jpg" />
              </div>
             )}
            </div>
