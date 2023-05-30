@@ -31,8 +31,6 @@ import { useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showToast } from "./ui-lib";
 
-const [showPopup, setShowPopup] = useState(false);
-
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
 });
@@ -118,6 +116,8 @@ export function SideBar(props: { className?: string }) {
   useHotKey();
 
   const websiteConfigStore = useWebsiteConfigStore();
+  
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
     <div
