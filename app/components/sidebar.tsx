@@ -31,6 +31,8 @@ import { useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showToast } from "./ui-lib";
 
+const [showPopup, setShowPopup] = useState(false);
+
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
 });
@@ -186,10 +188,17 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <Link to={Path.Login}>
-              <IconButton icon={<RewardIcon />} shadow />
-            </Link>
-         </div>
+           <div className="popup-container">
+            <div className="popup-button" onClick={() => setShowPopup(true)}>
+             <RewardIcon />
+            </div>
+            {showPopup && (
+             <div className="popup-window">
+               <img src="https://example.com/image.jpg" />
+             </div>
+            )}
+           </div>
+          </div>
         </div>
         <div>
           <IconButton
